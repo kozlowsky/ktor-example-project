@@ -8,12 +8,5 @@ class HouseService {
     fun getHouses(): Map<String, String> {
         return map
     }
-
-    fun addNewHouse(key: String?, value: String?) {
-        if (key.isNullOrEmpty() || value.isNullOrEmpty()) throw Exception()
-        if (map.containsKey(key)) throw Exception()
-
-        map[key] = value
-    }
 }
 
