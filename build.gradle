@@ -24,15 +24,25 @@ ext {
     ktor_version = '1.2.6'
     junit5_version = '5.5.2'
     logback_version = '1.2.3'
+    skrapeit_version = '1.0.0-alpha3'
+    exposed_version = '0.20.1'
 }
 
 dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     api "io.ktor:ktor-server-core:$ktor_version"
     api "io.ktor:ktor-server-netty:$ktor_version"
+    api 'org.jsoup:jsoup:1.12.1'
+    api "ch.qos.logback:logback-classic:$logback_version"
+    api "ch.qos.logback:logback-core:$logback_version"
+
+    compile "khttp:khttp:1.0.0"
+    compile "org.jetbrains.exposed:exposed-core:$exposed_version"
+    compile "org.jetbrains.exposed:exposed-jdbc:$exposed_version"
+    compile 'com.zaxxer:HikariCP:3.4.1'
+    compile "org.postgresql:postgresql:42.2.2"
 
     implementation "io.ktor:ktor-jackson:$ktor_version"
-    implementation "ch.qos.logback:logback-classic:$logback_version"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit5_version"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
